@@ -642,6 +642,135 @@
             box-shadow: var(--shadow-sm);
         }
 
+        /* Form Section Styles */
+        .form-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--gray-100);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-submit .btn {
+            flex: 1;
+        }
+
+        .form-note {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--primary);
+        }
+
+        .services-checkbox {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 2px solid var(--gray-300);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--primary);
+            background: rgba(13, 115, 119, 0.05);
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.75rem;
+            cursor: pointer;
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            color: var(--primary);
+        }
+
+        .badge-free {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-left: 0.5rem;
+        }
+
         /* Footer */
         footer {
             background: var(--dark);
@@ -708,7 +837,7 @@
             }
 
             .hero-image {
-                order: -1; /* Dát obrázek nahoru na mobilu */
+                order: -1;
                 margin-bottom: 2rem;
             }
 
@@ -741,6 +870,14 @@
             }
 
             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .services-checkbox {
                 grid-template-columns: 1fr;
             }
         }
@@ -790,6 +927,10 @@
 
             .cta-section {
                 padding: 3rem 2rem;
+            }
+
+            .form-container {
+                padding: 2rem;
             }
 
             footer {
@@ -864,7 +1005,7 @@
                             <div class="stat-label">Let zkušeností</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number">500+</div>
+                            <div class="stat-number">150+</div>
                             <div class="stat-label">Spokojených klientů</div>
                         </div>
                         <div class="stat-item">
@@ -887,7 +1028,7 @@
                         </div>
                         <div>
                             <strong>Certifikovaný poradce</strong><br>
-                            <small>Liberty Finance</small>
+                            <small>Liberty ochrana bohatství</small>
                         </div>
                     </div>
                 </div>
@@ -907,7 +1048,7 @@
                     <h2>Partner, kterému můžete důvěřovat</h2>
                     <p>
                         Jmenuji se Libor Radkovič a již více než 7 let se věnuji finančnímu poradenství. 
-                        Jako obchodní manažer ve společnosti Liberty Finance pomáhám klientům orientovat se 
+                        Jako obchodní manažer ve společnosti Liberty ochrana bohatství pomáhám klientům orientovat se 
                         ve světě financí a nacházet optimální řešení pro jejich situaci.
                     </p>
                     <p>
@@ -941,13 +1082,12 @@
                         <div class="feature-item">
                             <div class="feature-icon">
                                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                                 </svg>
                             </div>
                             <div>
-                                <strong>Neustálé vzdělávání</strong>
-                                <p>Držím krok s novinkami, abych vám mohl nabídnout to nejlepší</p>
+                                <strong>Online i osobní jednání</strong>
+                                <p>Flexibilní možnosti konzultací podle vašich preferencí</p>
                             </div>
                         </div>
                     </div>
@@ -973,8 +1113,8 @@
                         </svg>
                     </div>
                     <h3>Hypotéky</h3>
-                    <p>Pomůžu vám najít nejvýhodnější hypotéku na trhu. Vyřídím veškerou administrativu a provedu vás celým procesem.</p>
-                    <a href="#contact" class="service-link">Chci hypotéku →</a>
+                    <p>Pomůžu vám najít nejvýhodnější hypotéku na trhu. Vyřídím veškerou administrativu a provedu vás celým procesem. Při bezproblémovém průběhu trvá celý proces max. 3 týdny včetně čerpání.</p>
+                    <a href="#form" class="service-link">Chci hypotéku →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -984,7 +1124,7 @@
                     </div>
                     <h3>Životní pojištění</h3>
                     <p>Zajistěte sebe a svou rodinu pro případ neočekávaných životních situací. Nastavím pojištění přesně podle vašich potřeb.</p>
-                    <a href="#contact" class="service-link">Zajímá mě to →</a>
+                    <a href="#form" class="service-link">Zajímá mě to →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -995,7 +1135,7 @@
                     </div>
                     <h3>Investice</h3>
                     <p>Zhodnoťte své úspory efektivně a bezpečně. Sestavím investiční portfolio odpovídající vašim cílům a rizikovému profilu.</p>
-                    <a href="#contact" class="service-link">Chci investovat →</a>
+                    <a href="#form" class="service-link">Chci investovat →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1006,7 +1146,7 @@
                     </div>
                     <h3>Pojištění majetku</h3>
                     <p>Ochraňte svůj domov a majetek před nečekanými událostmi. Najdu pro vás optimální pojistnou ochranu za férovou cenu.</p>
-                    <a href="#contact" class="service-link">Více informací →</a>
+                    <a href="#form" class="service-link">Více informací →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1019,7 +1159,7 @@
                     </div>
                     <h3>Finanční plánování</h3>
                     <p>Sestavím váš osobní finanční plán a pomůžu vám dosáhnout vašich finančních cílů systematicky a efektivně.</p>
-                    <a href="#contact" class="service-link">Mám zájem →</a>
+                    <a href="#form" class="service-link">Mám zájem →</a>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -1032,7 +1172,29 @@
                     </div>
                     <h3>Firemní poradenství</h3>
                     <p>Specializované finanční služby pro podnikatele a firmy. Od pojištění odpovědnosti po investiční strategie.</p>
-                    <a href="#contact" class="service-link">Pro firmy →</a>
+                    <a href="#form" class="service-link">Pro firmy →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>Důchodový audit<span class="badge-free">ZDARMA</span></h3>
+                    <p>Zajistím pro vás důchodový audit (IOLDP) zcela zdarma (běžná cena 4.790 Kč). Na základě této služby je možné navýšit starobní, invalidní a jakýkoliv důchod.</p>
+                    <a href="#form" class="service-link">Chci audit zdarma →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6m4.22-10.22l4.24-4.24m-4.24 14.68l4.24 4.24M20 12h-6m-6 0H2m4.22-7.46L1.98 2.3m4.24 14.68L1.98 21.7"></path>
+                        </svg>
+                    </div>
+                    <h3>Dotace a realizace</h3>
+                    <p>Spolupracuji s partnery na vyřízení dotací a realizaci fotovoltaiky, tepelných čerpadel a rekonstrukcí domů a bytů. Kompletní servis pod jednou střechou.</p>
+                    <a href="#form" class="service-link">Zjistit více →</a>
                 </div>
             </div>
         </div>
@@ -1050,7 +1212,7 @@
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h3>Úvodní konzultace</h3>
-                    <p>Seznámíme se a probereme vaše potřeby, cíle a současnou situaci. Konzultace je nezávazná a zdarma.</p>
+                    <p>Seznámíme se a probereme vaše potřeby, cíle a současnou situaci. Konzultace je nezávazná a zdarma. Můžeme se setkat osobně nebo online.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
@@ -1077,7 +1239,113 @@
             <div class="cta-section">
                 <h2>Připraveni na finanční změnu?</h2>
                 <p>Nečekejte na zítřek. Udělejte první krok k lepší finanční budoucnosti ještě dnes.</p>
-                <a href="#contact" class="btn">Sjednat schůzku</a>
+                <a href="#form" class="btn">Sjednat schůzku</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="form">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Nezávazná poptávka</p>
+                <h2>Začněte svou cestu k finanční jistotě</h2>
+                <p>Vyplňte jednoduchý formulář a ozvu se vám do 24 hodin s návrhem řešení na míru.</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-note">
+                    <strong>🎯 První konzultace je vždy nezávazná a zdarma.</strong><br>
+                    Můžeme se setkat osobně v mé kanceláři, přijedu za vámi, nebo vše vyřešíme online.
+                </div>
+                
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Zde vložte váš klíč z Web3Forms -->
+                    <input type="hidden" name="access_key" value="VÁŠ_KLÍČ_Z_WEB3FORMS">
+                    
+                    <!-- Skrytá pole pro nastavení -->
+                    <input type="hidden" name="subject" value="Nová poptávka z webu - Libor Radkovič">
+                    <input type="hidden" name="from_name" value="Web Libor Radkovič">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Jméno *</label>
+                            <input type="text" id="firstName" name="Jméno" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Příjmení *</label>
+                            <input type="text" id="lastName" name="Příjmení" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="Telefon" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Mám zájem o: *</label>
+                        <div class="services-checkbox">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hypoteky" name="Služby" value="Hypotéky">
+                                <label for="hypoteky">Hypotéky</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="zivotni" name="Služby" value="Životní pojištění">
+                                <label for="zivotni">Životní pojištění</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="investice" name="Služby" value="Investice">
+                                <label for="investice">Investice</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="majetek" name="Služby" value="Pojištění majetku">
+                                <label for="majetek">Pojištění majetku</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="planovani" name="Služby" value="Finanční plánování">
+                                <label for="planovani">Finanční plánování</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="firmy" name="Služby" value="Firemní poradenství">
+                                <label for="firmy">Firemní poradenství</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="duchod" name="Služby" value="Důchodový audit">
+                                <label for="duchod">Důchodový audit (ZDARMA)</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="dotace" name="Služby" value="Dotace a realizace">
+                                <label for="dotace">Dotace a realizace</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferredContact">Preferovaný způsob jednání</label>
+                        <select id="preferredContact" name="Způsob_jednání">
+                            <option value="Jakýkoliv">Nemám preferenci</option>
+                            <option value="Osobně">Osobní schůzka</option>
+                            <option value="Online">Online jednání</option>
+                            <option value="Telefon">Telefonicky</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Vaše zpráva</label>
+                        <textarea id="message" name="Zpráva" placeholder="Zde můžete napsat další informace o vaší situaci, cílech nebo konkrétní dotazy..."></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Odeslat nezávaznou poptávku</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -1110,7 +1378,7 @@
                         </svg>
                     </div>
                     <h3>Telefon</h3>
-                    <p><a href="tel:+420777123456">+420 777 123 456</a></p>
+                    <p><a href="tel:+420601583968">+420 601 583 968</a></p>
                     <p style="font-size: 0.875rem; color: var(--text-light);">Po-Pá: 8:00 - 18:00</p>
                 </div>
                 
@@ -1122,14 +1390,14 @@
                         </svg>
                     </div>
                     <h3>E-mail</h3>
-                    <p><a href="mailto:libor.radkovic@libertyfinance.cz">libor.radkovic@libertyfinance.cz</a></p>
+                    <p><a href="mailto:libor.radkovic@beplan.cz">libor.radkovic@beplan.cz</a></p>
                     <p style="font-size: 0.875rem; color: var(--text-light);">Odpovím do 24 hodin</p>
                 </div>
             </div>
 
             <div class="contact-note">
-                <h3>Preferujete osobní schůzku?</h3>
-                <p>Rád se s vámi setkám v mé kanceláři v Hlučíně nebo přijedu za vámi. Termín si můžeme domluvit telefonicky nebo e-mailem.</p>
+                <h3>Preferujete osobní schůzku nebo online jednání?</h3>
+                <p>Rád se s vámi setkám v mé kanceláři v Hlučíně, přijedu za vámi, nebo můžeme vše vyřešit online. Termín si můžeme domluvit telefonicky nebo e-mailem.</p>
                 <p style="margin-top: 1rem;">
                     <strong>První konzultace je vždy nezávazná a zdarma.</strong>
                 </p>
@@ -1148,7 +1416,7 @@
                 <a href="#contact">Kontakt</a>
             </nav>
             <div class="footer-bottom">
-                <p>© 2025 Libor Radkovič. Všechna práva vyhrazena. | Liberty Finance</p>
+                <p>© 2025 Libor Radkovič. Všechna práva vyhrazena. | Liberty ochrana bohatství</p>
             </div>
         </div>
     </footer>
@@ -1194,6 +1462,40 @@
                     });
                 }
             });
+        });
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const checkboxes = document.querySelectorAll('input[name="Služby"]:checked');
+            
+            if (checkboxes.length === 0) {
+                e.preventDefault();
+                alert('Prosím vyberte alespoň jednu službu, o kterou máte zájem.');
+                return false;
+            }
+            
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+            
+            if (!phoneRegex.test(phone)) {
+                e.preventDefault();
+                alert('Prosím zadejte platné telefonní číslo.');
+                return false;
+            }
+        });
+
+        // Auto-check service based on referrer
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash === '#form') {
+                // Scroll to form
+                setTimeout(() => {
+                    const form = document.getElementById('form');
+                    if (form) {
+                        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
         });
 
         // Intersection Observer for fade-in animations
