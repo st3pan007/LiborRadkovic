@@ -116,6 +116,11 @@
             font-weight: 700;
             color: var(--primary);
             font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+        }
+
+        .logo:hover {
+            color: var(--primary-dark);
         }
 
         .nav-menu {
@@ -154,21 +159,23 @@
 
         .nav-cta {
             background: var(--primary);
-            color: white;
+            color: white !important;
             padding: 0.75rem 1.75rem;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .nav-cta:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
             box-shadow: var(--shadow-sm);
+            color: white !important;
         }
 
-        .nav-cta:hover::after {
-            width: 0;
+        .nav-cta::after {
+            display: none !important;
         }
 
         /* Hero Section */
@@ -1010,12 +1017,12 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="logo">Libor Radkovič</div>
+            <a href="index.html" class="logo">Libor Radkovič</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#home">Domů</a></li>
                 <li><a href="#about">O mně</a></li>
                 <li><a href="#services">Služby</a></li>
-                <li><a href="#process">Proces</a></li>
+                <li><a href="kariera.html">Kariéra</a></li>
                 <li><a href="#contact" class="nav-cta">Kontakt</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle">☰</button>
@@ -1446,7 +1453,7 @@
                 <a href="#home">Domů</a>
                 <a href="#about">O mně</a>
                 <a href="#services">Služby</a>
-                <a href="#process">Proces</a>
+                <a href="kariera.html">Kariéra</a>
                 <a href="#contact">Kontakt</a>
             </nav>
             <div class="footer-bottom">
