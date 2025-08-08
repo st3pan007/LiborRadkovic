@@ -386,7 +386,8 @@
         .about-image img {
             width: 100%;
             max-width: 600px;
-            height: auto;
+            height: 100%;
+            max-height: 900px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
@@ -427,9 +428,117 @@
             flex-shrink: 0;
         }
 
+        /* Certifications Section */
+        .certifications {
+            background: var(--gray-100);
+            padding: 80px 0;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .certification-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .certification-title {
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-close svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
         /* Services Section */
         .services {
-            background: var(--gray-100);
+            background: var(--white);
         }
 
         .services-grid {
@@ -508,7 +617,7 @@
 
         /* Process Section */
         .process {
-            background: var(--white);
+            background: var(--gray-100);
         }
 
         .process-steps {
@@ -583,7 +692,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--gray-100);
+            background: var(--white);
         }
 
         .contact-grid {
@@ -649,9 +758,34 @@
             box-shadow: var(--shadow-sm);
         }
 
+        .address-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .address-list li {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .address-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .address-list strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
         /* Form Section Styles */
         .form-section {
-            background: var(--white);
+            background: var(--gray-100);
             padding: 80px 0;
         }
 
@@ -920,6 +1054,10 @@
             .services-checkbox {
                 grid-template-columns: 1fr;
             }
+
+            .certifications-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -987,6 +1125,19 @@
             .footer-left,
             .footer-right {
                 text-align: center;
+            }
+
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certification-card img {
+                height: 250px;
+            }
+
+            .lightbox-close {
+                top: 20px;
+                right: 20px;
             }
         }
 
@@ -1082,7 +1233,7 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/4b272a3e-224c-4825-8f47-a5c66140c500/public" alt="Libor Radkovič - Finanční poradce" loading="lazy">
+                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/3baae382-a510-41d8-6586-48ff493ad900/public" alt="Libor Radkovič - Finanční poradce" loading="lazy">
                 </div>
                 <div class="about-text">
                     <p class="section-subtitle">O mně</p>
@@ -1136,6 +1287,52 @@
             </div>
         </div>
     </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications" id="certifications">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Moje kvalifikace</p>
+                <h2>Certifikace a vzdělání</h2>
+                <p>Neustále se vzdělávám, abych vám mohl poskytovat ty nejlepší služby v oboru.</p>
+            </div>
+            
+            <div class="certifications-grid">
+                <div class="certification-card" onclick="openLightbox('https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/a3d45683-cb7b-4364-a716-dc61684bb800/public')">
+                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/a3d45683-cb7b-4364-a716-dc61684bb800/public" alt="Certifikace 1" loading="lazy">
+                    <p class="certification-title">Odborná způsobilost</p>
+                </div>
+                
+                <div class="certification-card" onclick="openLightbox('https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/91088621-629c-4d41-5e17-659fb1bb5800/public')">
+                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/91088621-629c-4d41-5e17-659fb1bb5800/public" alt="Certifikace 2" loading="lazy">
+                    <p class="certification-title">Pojišťovací makléř</p>
+                </div>
+                
+                <div class="certification-card" onclick="openLightbox('https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/bf6b50fc-7819-49a2-5724-546f2a602000/public')">
+                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/bf6b50fc-7819-49a2-5724-546f2a602000/public" alt="Certifikace 3" loading="lazy">
+                    <p class="certification-title">Investiční poradenství</p>
+                </div>
+                
+                <div class="certification-card" onclick="openLightbox('https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/a7b349e8-fbc2-44ca-4e83-ac2b40de7600/public')">
+                    <img src="https://imagedelivery.net/2OhTeUm5dT07PSQroFepFw/a7b349e8-fbc2-44ca-4e83-ac2b40de7600/public" alt="Certifikace 4" loading="lazy">
+                    <p class="certification-title">Specializace hypotéky</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <img src="" alt="Certifikace" class="lightbox-img" id="lightboxImg">
+        </div>
+    </div>
 
     <!-- Services Section -->
     <section class="services" id="services">
@@ -1408,8 +1605,17 @@
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                     </div>
-                    <h3>Kancelář</h3>
-                    <p>Mírové náměstí 1<br>748 01 Hlučín</p>
+                    <h3>Kanceláře</h3>
+                    <ul class="address-list">
+                        <li>
+                            <strong>Hlučín</strong>
+                            Mírové náměstí 1<br>748 01 Hlučín
+                        </li>
+                        <li>
+                            <strong>Ostrava</strong>
+                            Kounicova 2929/5<br>702 00 Ostrava
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="contact-card">
@@ -1515,6 +1721,35 @@
             });
         });
 
+        // Lightbox functions
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
         // Form validation
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             const checkboxes = document.querySelectorAll('input[name="Služby"]:checked');
@@ -1565,7 +1800,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.service-card, .process-step, .contact-card').forEach(el => {
+        document.querySelectorAll('.service-card, .process-step, .contact-card, .certification-card').forEach(el => {
             observer.observe(el);
         });
     </script>
