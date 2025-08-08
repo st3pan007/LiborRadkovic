@@ -531,9 +531,99 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
+        /* Form Section Styles */
+        .form-section {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--gray-100);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-submit .btn {
+            flex: 1;
+        }
+
+        .form-note {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            border-left: 4px solid var(--primary);
+        }
+
+        .cv-note {
+            background: rgba(13, 115, 119, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .cv-note strong {
+            color: var(--primary);
+        }
+
         /* Contact Section */
         .contact {
-            background: var(--white);
+            background: var(--gray-100);
         }
 
         .contact-grid {
@@ -544,7 +634,7 @@
         }
 
         .contact-card {
-            background: var(--gray-100);
+            background: white;
             border-radius: 16px;
             padding: 2rem;
             text-align: center;
@@ -717,6 +807,10 @@
             .contact-grid {
                 grid-template-columns: 1fr;
             }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -780,6 +874,10 @@
             .footer-left,
             .footer-right {
                 text-align: center;
+            }
+
+            .form-container {
+                padding: 2rem;
             }
         }
 
@@ -1015,7 +1113,7 @@
                             Možnost manažerské kariéry
                         </li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Mám zájem o pozici</a>
+                    <a href="#career-form" class="btn btn-primary">Mám zájem o pozici</a>
                 </div>
                 
                 <div class="position-card">
@@ -1060,7 +1158,7 @@
                             Možnost home office
                         </li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Chci se připojit</a>
+                    <a href="#career-form" class="btn btn-primary">Chci se připojit</a>
                 </div>
                 
                 <div class="position-card">
@@ -1104,7 +1202,7 @@
                             Jednoduchá spolupráce
                         </li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Domluvit spolupráci</a>
+                    <a href="#career-form" class="btn btn-primary">Domluvit spolupráci</a>
                 </div>
             </div>
         </div>
@@ -1116,7 +1214,89 @@
             <div class="cta-section">
                 <h2>Připraveni na změnu?</h2>
                 <p>Každá velká cesta začíná prvním krokem. Udělejte ho ještě dnes a změňte svou budoucnost.</p>
-                <a href="#contact" class="btn">Kontaktujte nás</a>
+                <a href="#career-form" class="btn">Odeslat přihlášku</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Form Section -->
+    <section class="form-section" id="career-form">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Přihláška</p>
+                <h2>Staňte se součástí našeho týmu</h2>
+                <p>Vyplňte jednoduchý formulář a začněte svou novou kariéru. Ozvu se vám do 48 hodin.</p>
+            </div>
+            
+            <div class="form-container">
+                <div class="form-note">
+                    <strong>🚀 První krok k vaší nové kariéře!</strong><br>
+                    Hledáme motivované lidi, kteří chtějí růst a pomáhat ostatním. Zkušenosti nejsou podmínkou - všemu vás naučíme.
+                </div>
+                
+                <form id="careerForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Zde vložte váš klíč z Web3Forms -->
+                    <input type="hidden" name="access_key" value="a375fcdf-4360-4a22-9af7-b45249175102">
+                    
+                    <!-- Skrytá pole pro nastavení -->
+                    <input type="hidden" name="subject" value="Nová přihláška - Kariéra - Libor Radkovič">
+                    <input type="hidden" name="from_name" value="Web Kariéra - Libor Radkovič">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">Jméno *</label>
+                            <input type="text" id="firstName" name="Jméno" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Příjmení *</label>
+                            <input type="text" id="lastName" name="Příjmení" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="Telefon" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="position">Pozice, o kterou mám zájem *</label>
+                        <select id="position" name="Pozice" required>
+                            <option value="">Vyberte pozici</option>
+                            <option value="Finanční specialista">Finanční specialista</option>
+                            <option value="Asistent/ka">Asistent/ka</option>
+                            <option value="Tipař">Tipař</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">Máte předchozí zkušenosti v oboru?</label>
+                        <select id="experience" name="Zkušenosti">
+                            <option value="Ne, nemám zkušenosti">Ne, nemám zkušenosti</option>
+                            <option value="Ano, méně než 1 rok">Ano, méně než 1 rok</option>
+                            <option value="Ano, 1-3 roky">Ano, 1-3 roky</option>
+                            <option value="Ano, více než 3 roky">Ano, více než 3 roky</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Proč chcete pracovat v našem týmu? *</label>
+                        <textarea id="message" name="Motivace" placeholder="Napište nám něco o sobě, své motivaci a proč vás zaujala právě tato pozice..." required></textarea>
+                    </div>
+                    
+                    <div class="cv-note">
+                        <strong>💡 Tip:</strong> Svůj životopis můžete poslat na e-mail <a href="mailto:libor.radkovic@beplan.cz">libor.radkovic@beplan.cz</a> s předmětem "CV - [Vaše jméno]"
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">Odeslat přihlášku</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -1236,6 +1416,47 @@
                     });
                 }
             });
+        });
+
+        // Form validation
+        document.getElementById('careerForm').addEventListener('submit', function(e) {
+            const position = document.getElementById('position').value;
+            
+            if (!position) {
+                e.preventDefault();
+                alert('Prosím vyberte pozici, o kterou máte zájem.');
+                return false;
+            }
+            
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[\d\s\+\-\(\)]+$/;
+            
+            if (!phoneRegex.test(phone)) {
+                e.preventDefault();
+                alert('Prosím zadejte platné telefonní číslo.');
+                return false;
+            }
+            
+            const message = document.getElementById('message').value;
+            if (message.length < 10) {
+                e.preventDefault();
+                alert('Prosím napište alespoň krátkou motivaci (minimálně 10 znaků).');
+                return false;
+            }
+        });
+
+        // Auto-check position based on URL parameter
+        window.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash;
+            if (hash === '#career-form') {
+                // Scroll to form
+                setTimeout(() => {
+                    const form = document.getElementById('career-form');
+                    if (form) {
+                        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
         });
 
         // Intersection Observer for fade-in animations
